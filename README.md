@@ -28,15 +28,14 @@ you see the terms.
    traditionally called `thisArg`, and the arguments you want to send to the
    function after the `thisArg`. An invocation of `call` looks like:
    `Calculator.sum.call(multilingualMessages, 1, 2)`
-3. `apply`: This is a method _on a function_ that calls the function, just like
+4. `apply`: This is a method _on a function_ that calls the function, just like
    `()`. You provide a new execution context as the first argument,
    traditionally called `thisArg`, and the arguments you want to send to the
-   function ***as an `Array`*** after the `thisArg`. An invocation of `call`
+   function ***as an `Array`*** after the `thisArg`. An invocation of `apply`
    looks like: `Calculator.sum.apply(multilingualMessages, [1, 2])`
-4. `bind`: This method returns _a copy_ of the function but with the execution
+5. `bind`: This method returns _a copy_ of the function but with the execution
    context "set" to the argument that's passed to `bind`. It looks like this:
-   `sayHello.bind(greenFrog)("Hello") //=> "Mr. GreenFrog says *Hello* to you
-    all."`
+   `sayHello.bind(greenFrog)("Hello") //=> "Mr. GreenFrog says *Hello* to you all."`
 
 Printing up these definitions is what _most_ JavaScript documentation does.
 People accept these as truth and shrug and muddle their way through living in a
@@ -60,15 +59,16 @@ punch-cards. They looked like this:
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Used_Punchcard_%285151286161%29.jpg/800px-Used_Punchcard_%285151286161%29.jpg" alt="Image of a punched card, used in early computers" />
 
 These cards, or "records," often had information on them in "fields." In the
-`first_name` field you'd find a first name, etc. So when a business needed to
+`first_name` field, you'd find a first name, etc... So when a business needed to
 figure out how much to pay each person for a week's work, something like the
 following would happen:
 
-* Load up all the employees' cards into a tray
-* Feed the tray of cards into the computer
-* The computer would read in each card and calculate the hours worked for the week per card
-* The computer would emit a new card with all the old data but this a new field added like `wagesPaidInWeek33OfYear: 550`
-* The computer would also print out a table of the employee name and the amount owed
+- Load up all the employees' cards into a tray
+- Feed the tray of cards into the computer
+- The computer would read in each card and calculate the hours worked for the week per card
+- The computer would emit a new card with all the old data but this card would have a new field 
+  added called something like `wagesPaidInWeek33OfYear: 550`
+- The computer would also print out a table of the employee name and the amount owed
 
 > **ASIDE**: Come to think of it, iterating over a collection, performing a
 > transformation and emitting a new collection where every element has been
@@ -87,7 +87,7 @@ total.
 > evaluation on each element and emitting a new value based on those elements
 > sounds an _awful_ lot like `reduce` to us.
 
-Ultimately the "punch card" was an intermediate step between paper records and
+Ultimately, the "punch card" was an intermediate step between paper records and
 digital records. But it was during the punch-card era that computing really got
 big, so a _lot_ of our ways of thinking about programming started by thinking
 about "records."
@@ -105,7 +105,7 @@ bet they'll understand what the term means, though.
 The amazing thing is that in the 21st century this style of programming is back
 in vogue! We're not using punch cards, but the ability to spin up hundreds of
 little computers in a cloud, hand them each a bundle of records, and get
-answers back and process the answers are records is _cutting-edge_!
+answers back and process the answers are records is _cutting-edge!_
 
 In fact, a program to do `map` and `reduce` operations at scale on a cloud was
 standardized in the 2000s. Guess what it's called? [`mapReduce`][mapreduce]
@@ -130,8 +130,8 @@ leave, the employee will "punch out."
 
 For simplicity's sake, we'll make these assumptions:
 
-1. Assume that employees always check in **and** check out.
-2. Assume employees always check in and out on the hour
+1. Assume that employees always check-in **and** check-out.
+2. Assume employees always check-in and out on the hour
 3. The time is represented on a 24-hour clock (1300 is 1:00 pm); this keeps the
    math easier and is the standard in most of the world
 4. When timestamps are needed, they will be provided as `String`s in the form:
@@ -155,12 +155,12 @@ the last few lessons.
 If you have the time, you can learn more about JavaScript and remove the
 simplifying assumptions we wrote above. You can expand your learning by:
 
-* Raise an exception if a `timeIn` is found without a matching `timeOut`
-  * [Exception Handling in JavaScript][error]
-* Figure out how to turn a time stamp into a construct that allows for you to
+- Raise an exception if a `timeIn` is found without a matching `timeOut`
+  - [Exception Handling in JavaScript][error]
+- Figure out how to turn a time stamp into a construct that allows for you to
   handle across day and non-o'clock times
-  * [Date Class Documentation][date]
-* Raise errors if the time stamp is in an invalid format
+  - [Date Class Documentation][date]
+- Raise errors if the time stamp is in an invalid format
 
 While the bar set by the tests is at one level, you can turn this into a robust
 application, if you so desire!
@@ -183,9 +183,9 @@ programming to be optimal for the ease of testing and simplicity of code.
 
 ## Resources
 
-* [Record / Record-Oriented Programming][rop]
-* [JavaScript Error Class][error]
-* [JavaScript Date Class][date]
+- [Record / Record-Oriented Programming][rop]
+- [JavaScript Error Class][error]
+- [JavaScript Date Class][date]
 
 [rop]: https://en.wikipedia.org/wiki/Record_(computer_science)
 [mapreduce]: https://en.wikipedia.org/wiki/MapReduce
