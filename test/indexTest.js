@@ -37,7 +37,7 @@ describe("The payroll system", function () {
     })
   })
 
-  describe("process an Array of Arrays into an Array of Employee records", function () {
+  describe("process an Array of Arrays into an Array of employee records", function () {
     it("has a function called createEmployees", function () {
       expect(createEmployees).to.exist
     })
@@ -166,7 +166,7 @@ describe("The payroll system", function () {
     })
 
     describe("allWagesFor", function () {
-      it("calculates that the employee earned 54 dollars", function () {
+      it("calculates that the employee earned 378 dollars", function () {
         cRecord = createEmployeeRecord(["Julius", "Caesar", "General", 27])
         // Earns 324
         updatedBpRecord = createTimeInEvent(cRecord, "44-03-14 0900")
@@ -181,11 +181,11 @@ describe("The payroll system", function () {
   })
 
   describe("Given an array of multiple employees", function () {
-    it("payrollExpense aggregates all the dates' wages and adds them together", function () {
-      expect(allWagesFor).to.exist
+    it("calculatePayroll aggregates all the dates' wages and adds them together", function () {
+      expect(calculatePayroll).to.exist
     })
 
-    describe("payrollExpense", function () {
+    describe("calculatePayroll", function () {
       it("calculates that the employees earned 770 dollars", function () {
         let rRecord = createEmployeeRecord(["Rafiki", "", "Aide", 10])
         let sRecord = createEmployeeRecord(["Simba", "", "King", 100])
@@ -212,8 +212,9 @@ describe("The payroll system", function () {
           rRecord = createTimeOutEvent(rRecord, dOut)
         })
 
-        let grandTotalOwed = [sRecord, rRecord].reduce((m, e) => m + allWagesFor(e), 0)
-        expect(grandTotalOwed).to.equal(770)
+        let employees = [sRecord, rRecord]
+        let grandTotalOwed = employees.reduce((m, e) => m + allWagesFor(e), 0)
+        expect(grandTotalOwed).to.equal(calculatePayroll(employees))
       })
     })
   })
