@@ -111,7 +111,7 @@ In fact, a program to do `map` and `reduce` operations at scale on a cloud was
 standardized in the 2000s. Guess what it's called? [`mapReduce`][mapreduce]
 &mdash; and you should know why. It was pioneered and advanced as part of the
 secret sauce that made a small little company from Mountain View, California
-called Google to become the giant it is today. Today you can use it under the
+called Google become the giant it is today. Today you can use it under the
 name of [Apache Hadoop][Hadoop]
 
 The "Go" programming language is built around building and processing records
