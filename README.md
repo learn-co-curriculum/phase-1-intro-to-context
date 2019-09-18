@@ -273,7 +273,7 @@ the function returns.
   * Converts each nested `Array` into an employee record using
     `createEmployeeRecord` and accumulates it to a new `Array`
 
-### `findEmployeebyFirstName`
+### `findEmployeeByFirstName`
 
 * **Argument(s)**
   * `srcArray`: Array of employee records
