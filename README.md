@@ -206,7 +206,7 @@ the function returns.
 
  * **Argument(s)**
   * An employee record `Object`
-  * A date stamp (`"YYYY-MM-DD"`)
+  * A date stamp (`"YYYY-MM-DD HHMM"`)
 * **Returns**
   * The employee record
 * **Behavior**
@@ -220,7 +220,7 @@ the function returns.
 
  * **Argument(s)**
   * An employee record `Object`
-  * A date stamp (`"YYYY-MM-DD"`)
+  * A date stamp (`"YYYY-MM-DD HHMM"`)
 * **Returns**
   * The employee record
 * **Behavior**
