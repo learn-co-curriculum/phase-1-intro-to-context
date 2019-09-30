@@ -9,7 +9,7 @@ let createEmployeeRecord = function(row){
     }
 }
 
-let createEmployees = function(employeeRowData) {
+let createEmployeeRecords = function(employeeRowData) {
     return employeeRowData.map(function(row){
         return createEmployeeRecord(row)
     })
@@ -67,12 +67,6 @@ let allWagesFor = function(employee){
     }, 0)
 
     return payable
-}
-
-let createEmployeeRecords = function(src) {
-  return src.map(function(row){
-    return createEmployeeRecord(row)
-  })
 }
 
 let findEmployeeByFirstName = function(srcArray, firstName) {
