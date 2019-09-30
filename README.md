@@ -192,7 +192,7 @@ the function returns.
     _Additionally_, initialize empty `Array`s on the properties `timeInEvents`
     and `timeOutEvents`.
 
-### `createEmployees`
+### `createEmployeeRecords`
 
  * **Argument(s)**
   * `Array` of `Arrays`
@@ -262,16 +262,6 @@ the function returns.
   * Using `wagesEarnedOnDate`, accumulate the value of all dates worked by the
     employee in the record used as context. Amount should be returned as a
     number. **HINT**: You will need to find the available dates somehow...
-
-### `createEmployeeRecords`
-
-* **Argument(s)**
-  * `Array` of `Arrays`
-* **Returns**
-  * `Array` of `Object`s
-* **Behavior**
-  * Converts each nested `Array` into an employee record using
-    `createEmployeeRecord` and accumulates it to a new `Array`
 
 ### `findEmployeeByFirstName`
 
