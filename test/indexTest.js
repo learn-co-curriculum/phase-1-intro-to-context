@@ -136,9 +136,9 @@ describe("The payroll system", function () {
     describe("hoursWorkedOnDate", function () {
       it("calculates that the employee worked 2 hours", function () {
         cRecord = createEmployeeRecord(["Julius", "Caesar", "General", 1000])
-        updatedBpRecord = createTimeInEvent(cRecord, "44-03-15 0900")
-        updatedBpRecord = createTimeOutEvent(cRecord, "44-03-15 1100")
-        expect(hoursWorkedOnDate(cRecord, "44-03-15")).to.equal(2)
+        updatedBpRecord = createTimeInEvent(cRecord, "0044-03-15 0900")
+        updatedBpRecord = createTimeOutEvent(cRecord, "0044-03-15 1100")
+        expect(hoursWorkedOnDate(cRecord, "0044-03-15")).to.equal(2)
       })
     })
   })
@@ -152,9 +152,9 @@ describe("The payroll system", function () {
     describe("wagesEarnedOnDate", function () {
       it("calculates that the employee earned 54 dollars", function () {
         cRecord = createEmployeeRecord(["Julius", "Caesar", "General", 27])
-        updatedBpRecord = createTimeInEvent(cRecord, "44-03-15 0900")
-        updatedBpRecord = createTimeOutEvent(cRecord, "44-03-15 1100")
-        expect(wagesEarnedOnDate(cRecord, "44-03-15")).to.equal(54)
+        updatedBpRecord = createTimeInEvent(cRecord, "0044-03-15 0900")
+        updatedBpRecord = createTimeOutEvent(cRecord, "0044-03-15 1100")
+        expect(wagesEarnedOnDate(cRecord, "0044-03-15")).to.equal(54)
       })
     })
   })
@@ -169,11 +169,11 @@ describe("The payroll system", function () {
       it("calculates that the employee earned 378 dollars", function () {
         cRecord = createEmployeeRecord(["Julius", "Caesar", "General", 27])
         // Earns 324
-        updatedBpRecord = createTimeInEvent(cRecord, "44-03-14 0900")
-        updatedBpRecord = createTimeOutEvent(cRecord, "44-03-14 2100")
+        updatedBpRecord = createTimeInEvent(cRecord, "0044-03-14 0900")
+        updatedBpRecord = createTimeOutEvent(cRecord, "0044-03-14 2100")
         // Earns 54
-        updatedBpRecord = createTimeInEvent(cRecord, "44-03-15 0900")
-        updatedBpRecord = createTimeOutEvent(cRecord, "44-03-15 1100")
+        updatedBpRecord = createTimeInEvent(cRecord, "0044-03-15 0900")
+        updatedBpRecord = createTimeOutEvent(cRecord, "0044-03-15 1100")
         // 324 + 54
         expect(allWagesFor(cRecord)).to.equal(378)
       })
