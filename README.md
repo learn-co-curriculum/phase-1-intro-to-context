@@ -176,7 +176,7 @@ the function returns.
 
 ### `createEmployeeRecord`
 
- * **Argument(s)**
+* **Argument(s)**
   * A 4-element Array of a `String`, `String`, `String`, and `Number`
     corresponding to a first name, family name, title, and pay rate per hour
 * **Returns**
@@ -194,7 +194,7 @@ the function returns.
 
 ### `createEmployeeRecords`
 
- * **Argument(s)**
+* **Argument(s)**
   * `Array` of `Arrays`
 * **Returns**
   * `Array` of `Object`s
@@ -204,7 +204,7 @@ the function returns.
 
 ### `createTimeInEvent`
 
- * **Argument(s)**
+* **Argument(s)**
   * An employee record `Object`
   * A date stamp (`"YYYY-MM-DD HHMM"`)
 * **Returns**
@@ -218,7 +218,7 @@ the function returns.
 
 ### `createTimeOutEvent`
 
- * **Argument(s)**
+* **Argument(s)**
   * An employee record `Object`
   * A date stamp (`"YYYY-MM-DD HHMM"`)
 * **Returns**
@@ -275,7 +275,7 @@ the function returns.
 
 ### `calculatePayroll`
 
- * **Argument(s)**
+* **Argument(s)**
   * `Array` of employee records
 * **Returns**
   * Sum of pay owed to all employees for all dates, as a number
