@@ -60,6 +60,25 @@ describe("The payroll system", function () {
         let nameExtractor = function (e) { return e.firstName }
         expect(employeeRecords.map(nameExtractor)).to.eql(["moe", "bartholomew"]);
       })
+
+      it("creates more than 2 records", function() {
+        let dataEmployees = [
+          ["Thor", "Odinsson", "Electrical Engineer", 45],
+          ["Loki", "Laufeysson-Odinsson", "HR Representative", 35],
+          ["Natalia", "Romanov", "CEO", 150],
+          ["Darcey", "Lewis", "Intern", 15],
+          ["Jarvis", "Stark", "CIO", 125],
+          ["Anthony", "Stark", "Angel Investor", 300],
+          ["Byron", "Poodle", "Mascot", 3],
+          ["Julius", "Caesar", "General", 27],
+          ["Rafiki", "", "Aide", 10],
+          ["Simba", "", "King", 100]
+        ]
+        let employeeRecords = createEmployeeRecords(dataEmployees)
+        expect(employeeRecords.length).to.equal(10)
+        expect(employeeRecords[0].firstName).to.equal(dataEmployees[0][0])
+        expect(employeeRecords[9].firstName).to.equal(dataEmployees[9][0])
+      })
     })
   })
 
@@ -314,7 +333,7 @@ describe("The payroll system", function () {
               timesOutRecordRow[1].forEach(function(timeOutStamp){
                 createTimeOutEvent(rec, timeOutStamp)
               })
-            }) 
+            })
             expect(calculatePayroll(employeeRecords)).to.eql(11880)
           })
         })
@@ -322,5 +341,3 @@ describe("The payroll system", function () {
     })
   })
 })
-
-
