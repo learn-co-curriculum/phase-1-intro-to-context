@@ -56,7 +56,7 @@ Back in the old days (the 1960s and earlier) computers didn't have much memory.
 Records were stored on, if you can even believe this, small paper cards called
 punch-cards. They looked like this:
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Used_Punchcard_%285151286161%29.jpg/800px-Used_Punchcard_%285151286161%29.jpg" alt="Image of a punched card, used in early computers" />
+![Image of a punched card, used in early computers](https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Used_Punchcard_%285151286161%29.jpg/800px-Used_Punchcard_%285151286161%29.jpg)
 
 These cards, or "records," often had information on them in "fields." In the
 `first_name` field, you'd find a first name, etc... So when a business needed to
