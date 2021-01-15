@@ -105,7 +105,7 @@ bet they'll understand what the term means, though.
 The amazing thing is that in the 21st century this style of programming is back
 in vogue! We're not using punch cards, but the ability to spin up hundreds of
 little computers in a cloud, hand them each a bundle of records, and get
-answers back and process the answers are records is _cutting-edge!_
+answers back is _cutting-edge!_
 
 In fact, a program to do `map` and `reduce` operations at scale on a cloud was
 standardized in the 2000s. Guess what it's called? [`mapReduce`][mapreduce]
