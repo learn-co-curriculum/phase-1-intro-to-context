@@ -16,7 +16,7 @@ off by defining five key terms. Each will be addressed in depth elsewhere, but
 we want to give you a survey first so you can say "Oh, this is important" when
 you see the terms.
 
-**Definitions**
+## Definitions
 
 1. Execution Context: When JavaScript functions run, they have an associated
    JavaScript `Object` that goes along with them which they can access by the
