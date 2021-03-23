@@ -2,8 +2,8 @@
 
 ## Learning Goals
 
-- Define the term "record"
-- Define the term "record-oriented programming"
+* Define the term "record"
+* Define the term "record-oriented programming"
 
 ## Introduction
 
@@ -63,12 +63,12 @@ These cards, or "records," often had information on them in "fields." In the
 figure out how much to pay each person for a week's work, something like the
 following would happen:
 
-- Load up all the employees' cards into a tray
-- Feed the tray of cards into the computer
-- The computer would read in each card and calculate the hours worked for the week per card
-- The computer would emit a new card with all the old data but this card would have a new field 
+* Load up all the employees' cards into a tray
+* Feed the tray of cards into the computer
+* The computer would read in each card and calculate the hours worked for the week per card
+* The computer would emit a new card with all the old data but this card would have a new field
   added called something like `wagesPaidInWeek33OfYear: 550`
-- The computer would also print out a table of the employee name and the amount owed
+* The computer would also print out a table of the employee name and the amount owed
 
 > **ASIDE**: Come to think of it, iterating over a collection, performing a
 > transformation and emitting a new collection where every element has been
@@ -155,12 +155,12 @@ the last few lessons.
 If you have the time, you can learn more about JavaScript and remove the
 simplifying assumptions we wrote above. You can expand your learning by:
 
-- Raise an exception if a `timeIn` is found without a matching `timeOut`
-  - [Exception Handling in JavaScript][error]
-- Figure out how to turn a time stamp into a construct that allows for you to
+* Raise an exception if a `timeIn` is found without a matching `timeOut`
+  * [Exception Handling in JavaScript][error]
+* Figure out how to turn a time stamp into a construct that allows for you to
   handle across day and non-o'clock times
-  - [Date Class Documentation][date]
-- Raise errors if the time stamp is in an invalid format
+  * [Date Class Documentation][date]
+* Raise errors if the time stamp is in an invalid format
 
 While the bar set by the tests is at one level, you can turn this into a robust
 application, if you so desire!
@@ -300,9 +300,9 @@ programming to be optimal for the ease of testing and simplicity of code.
 
 ## Resources
 
-- [Record / Record-Oriented Programming][rop]
-- [JavaScript Error Class][error]
-- [JavaScript Date Class][date]
+* [Record / Record-Oriented Programming][rop]
+* [JavaScript Error Class][error]
+* [JavaScript Date Class][date]
 
 [rop]: https://en.wikipedia.org/wiki/Record_(computer_science)
 [mapreduce]: https://en.wikipedia.org/wiki/MapReduce
