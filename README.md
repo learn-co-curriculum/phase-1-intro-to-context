@@ -289,8 +289,8 @@ execution context. We'll learn how we can DRY up our code using execution
 contexts in the next lesson.
 
 It's also worth your time to take a look at the tests in `test/indexTest.js`.
-Because of this application's design, it's easy to test the functions which
-drive the application. Some programmers consider this style of programming to be
+Because of this application's design, it's easy to test the functions that drive
+the application. Some programmers consider this style of programming to be
 optimal for the ease of testing and simplicity of code.
 
 ## Resources
