@@ -2,55 +2,62 @@
 
 ## Learning Goals
 
+* Introduce execution context
 * Define the term "record"
 * Define the term "record-oriented programming"
 
 ## Introduction
 
-Let's take a moment to appreciate where we are. We've reviewed the basic use
-and creation of functions. We've applied these skills in the context of
+Let's take a moment to appreciate where we are. We've reviewed the basic use and
+creation of functions. We've applied these skills in the context of
 collection-processing methods like `map`, `reduce`, and `forEach`. We're now
 ready to face one of the (infamously) most-challenging parts of JavaScript:
-working with execution context. We're going to start this sequence of lessons
-off by defining five key terms. Each will be addressed in depth elsewhere, but
-we want to give you a survey first so you can say "Oh, this is important" when
-you see the terms.
+working with execution context.
 
-## Definitions
+## Introducing Execution Context
 
-1. Execution Context: When JavaScript functions run, they have an associated
-   JavaScript `Object` that goes along with them which they can access by the
-   keyword `this`.
+When JavaScript functions run, they have an associated JavaScript `Object` that
+goes along with them; this `Object` is known as the function's _execution
+context_. This concept will become clearer as you see it in action in upcoming
+lessons, but for now just know that the execution context is how JavaScript
+knows things like what variables are in scope, what methods are available, etc.
+
+We're going to start this sequence of lessons off by defining five key terms.
+Each will be addressed in depth in upcoming lessons, but we want to introduce
+them now so you can say "Oh, this is important" when you see them later.
+
+1. Execution Context: the JavaScript `Object` that goes along with a JavaScript
+   function when it is called and which can be accessed inside the function
+   by using the keyword `this`.
 2. `this`: Inside a function, `this` is the `Object` that represents the
-   function's execution context
+   function's execution context. Properties belonging to the execution context
+   `Object` can be accessed using dot notation: `this.propName`.
 3. `call`: This is a method _on a function_ that calls the function, just like
    `()`. You provide a new execution context as the first argument,
    traditionally called `thisArg`, and the arguments you want to send to the
-   function after the `thisArg`. An invocation of `call` looks like:
-   `Calculator.sum.call(multilingualMessages, 1, 2)`
+   function after the `thisArg`. An invocation of `call` looks like this:
+   `Calculator.sum.call(multilingualMessages, 1, 2)`.
 4. `apply`: This is a method _on a function_ that calls the function, just like
    `()`. You provide a new execution context as the first argument,
    traditionally called `thisArg`, and the arguments you want to send to the
    function ***as an `Array`*** after the `thisArg`. An invocation of `apply`
-   looks like: `Calculator.sum.apply(multilingualMessages, [1, 2])`
-5. `bind`: This method returns _a copy_ of the function but with the execution
-   context "set" to the argument that's passed to `bind`. It looks like this:
-   `sayHello.bind(greenFrog)("Hello") //=> "Mr. GreenFrog says *Hello* to you all."`
+   looks like this: `Calculator.sum.apply(multilingualMessages, [1, 2])`.
+5. `bind`: This method returns _a copy_ of the function it's called on, but with
+   the execution context "set" to the argument that's passed to `bind`. It looks
+   like this: `sayHello.bind(greenFrog)("Hello") //=> "Mr. GreenFrog says *Hello* to you all."`.
 
 Printing up these definitions is the only thing _most_ JavaScript documentation
 does. People accept these as truth and shrug and muddle their way through,
 living in a state of fear when they have to apply these concepts in JavaScript —
 but that won't be you!
 
-In this lab, we're going to practice what we've already learned about JavaScript
-to build a time card application, guided by tests. This application is an
-example of a "record-oriented" application, which is quite simply an application
-that is used to process _records_. For this lab, the records are the time cards
-for each employee. Once we have a working application, we'll show how execution
-context, `this`, `call`, `apply` and `bind` can DRY up our code.
-
-With these capabilities, we hope you'll learn to love functions even more
-— maybe even as much as JavaScript does!
+We will cover these concepts in depth soon. Before we do that, however, in this
+lab we'll create some context by practicing what we've already learned about
+JavaScript to build a time card application. This application is an example of a
+"record-oriented" application, which is quite simply an application that is used
+to process _records_. For this lab, the records are the time cards for each
+employee. Once we have a working application, we'll show how execution context,
+`this`, `call`, `apply` and `bind` can DRY up our code.
 
 ## Define the Term "Record"
 
@@ -125,30 +132,26 @@ Maybe it'll be the hot job posting buzzword any minute now!
 ## Lab
 
 In this lab, we're going to build a time card and payroll application using the
-record-oriented approach.
-
-The tests guide you to implementing a time card system: when someone enters the
-company's state of the art technical office, the employee has to insert their
-card in a time clock which will record the time they came in. When it's time to
-leave, the employee will "punch out."
+record-oriented approach. When someone enters the company's state of the art
+technical office, the employee has to insert their card in a time clock which
+will record the time they came in. When it's time to leave, the employee will
+"punch out."
 
 For simplicity's sake, we'll make these assumptions:
 
-1. Assume that employees always check in **and** check out.
-2. Assume employees always check in and out on the hour
+1. Employees always check in **and** check out.
+2. Employees always check in and out on the hour.
 3. The time is represented on a 24-hour clock (1300 is 1:00 pm); this keeps the
-   math easier and is the standard in most of the world
+   math easier and is the standard in most of the world.
 4. When timestamps are needed, they will be provided as `String`s in the form:
-   `"YYYY-MM-DD 800"` or `"YYYY-MM-DD 1800"` e.g. `"2018-01-01 2300"`
-5. Employees will never work across days, i.e., in at `2200` and out at `0400` the
+   `"YYYY-MM-DD 800"` or `"YYYY-MM-DD 1800"` e.g. `"2018-01-01 2300"`.
+5. Employees will never work across days, e.g., in at `2200` and out at `0400` the
    next day.
 
-The lab tests will guide you toward a solution. Keep in mind, the goal is to
-understand how to "grow" an application in "record-oriented" fashion in
-JavaScript, _as well as_ pass the lab. Make sure you're learning about this app
-design while you code the solutions. When you encounter a failing test, look at
-how the test is calling the function that's missing or failing: how did it call
-the function, what arguments did it pass? What kind of thing did it expect back?
+The lab tests will guide you toward a solution. When you encounter a failing
+test, look at how the test is calling the function that's missing or failing:
+how did it call the function, what arguments did it pass? What kind of thing did
+it expect back?
 
 Take advantage of the collection-processing strengths you built up over the last
 few lessons.
@@ -161,7 +164,7 @@ simplifying assumptions we wrote above. You can expand your learning by:
 * Raising an exception if a `timeIn` is found without a matching `timeOut`
   * [Exception Handling in JavaScript][error]
 * Figuring out how to turn a time stamp into a construct that allows for you to
-  handle cross-day and non-o'clock times
+  handle cross-day times and start and end times that aren't on the hour
   * [Date Class Documentation][date]
 * Raising errors if the time stamp is in an invalid format
 
@@ -173,7 +176,8 @@ Do your coding in `index.js`.
 You should be guided by the tests as you work through the lab, but to help make
 the tests easier to read, we've also provided the _signatures_ of the functions
 below. A function _signature_ is the function name, the arguments it expects,
-and what the function returns.
+and what the function returns. Pay close attention to the description of each
+function's expected behavior.
 
 ### `createEmployeeRecord`
 
@@ -264,16 +268,6 @@ and what the function returns.
     employee in the record used as context. Amount should be returned as a
     number. **HINT**: You will need to find the available dates somehow...
 
-### `findEmployeeByFirstName`
-
-* **Argument(s)**
-  * `srcArray`: Array of employee records
-  * `firstName`: String representing a first name held in an employee record
-* **Returns**
-  * Matching record or `undefined`
-* **Behavior**
-  * Test the `firstName` field for a match with the `firstName` argument
-
 ### `calculatePayroll`
 
 * **Argument(s)**
@@ -290,14 +284,14 @@ and what the function returns.
 Congratulations! At the end of this lab, you should have built several
 incredibly simple functions that leveraged `map` and `reduce` to transform and
 aggregate data. Take a look at your code and see where you might be repeating
-yourself. Finding these repetitions will be where we can bring in the
-innovation of execution context. We'll learn how this can DRY up our code using
-execution contexts in the next lesson.
+yourself. These repetitions will be where we can bring in the innovation of
+execution context. We'll learn how we can DRY up our code using execution
+contexts in the next lesson.
 
 It's also worth your time to take a look at the tests in `test/indexTest.js`.
-Because of this application's design, it's incredibly easy to test the
-functions which drive the application. Some programmers consider this style of
-programming to be optimal for the ease of testing and simplicity of code.
+Because of this application's design, it's easy to test the functions which
+drive the application. Some programmers consider this style of programming to be
+optimal for the ease of testing and simplicity of code.
 
 ## Resources
 
