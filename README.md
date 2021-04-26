@@ -46,18 +46,14 @@ them now so you can say "Oh, this is important" when you see them later.
    the execution context "set" to the argument that's passed to `bind`. It looks
    like this: `sayHello.bind(greenFrog)("Hello") //=> "Mr. GreenFrog says *Hello* to you all."`.
 
-Printing up these definitions is the only thing _most_ JavaScript documentation
-does. People accept these as truth and shrug and muddle their way through,
-living in a state of fear when they have to apply these concepts in JavaScript —
-but that won't be you!
-
-We will cover these concepts in depth soon. Before we do that, however, in this
-lab we'll create some context by practicing what we've already learned about
-JavaScript to build a time card application. This application is an example of a
-"record-oriented" application, which is quite simply an application that is used
-to process _records_. For this lab, the records are the time cards for each
-employee. Once we have a working application, we'll show how execution context,
-`this`, `call`, `apply` and `bind` can DRY up our code.
+Don't worry if this isn't making a lot of sense just yet — we will cover these
+concepts in depth soon. Before we do that, however, in this lab we'll create
+some context by practicing what we've already learned about JavaScript to build
+a time card application. This application is an example of a "record-oriented"
+application, which is quite simply an application that is used to process
+_records_. For this lab, the records are the time cards for each employee. Once
+we have a working application, we'll show how execution context, `this`, `call`,
+`apply` and `bind` can DRY up our code.
 
 ## Define the Term "Record"
 
