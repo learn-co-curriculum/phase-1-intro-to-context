@@ -16,17 +16,17 @@ working with execution context.
 
 ## Introducing Execution Context
 
-When JavaScript code runs, a JavaScript `Object` is created that contains
-references to the variables and functions that are defined at the global level.
-This object is referred to as the _global execution context_. In addition, any
-time a function is invoked, a separate `Object` known as the _function execution
-context_ is created, with references to any variables or functions defined
-within that function.
+When JavaScript code runs, the JavaScript engine sets aside a place in memory to
+store references to the variables and functions that are defined at the global
+level. This is referred to as the _global execution context_. In addition, any
+time a function is invoked, a separate space in memory known as the _function
+execution context_ is created, with references to any variables or functions
+defined within that function.
 
 Logically enough, when code is executed at the global level, the _execution
 context_ is the global execution context. Similarly, when a function is invoked,
 the _execution context_ is the execution context defined for that function.
-However, in addition to their _local_ execution context, functions also have
+However, in addition to their _function execution context_, functions also have
 access to the execution contexts of their parents — the global context plus any
 functions they are enclosed in. In general, _execution context_ refers to the
 full set of variables and methods available, either locally or via the scope
@@ -40,26 +40,27 @@ We're going to start this sequence of lessons off by defining five key terms.
 Each will be addressed in depth in upcoming lessons, but we want to introduce
 them now so you can say "Oh, this is important" when you see them later.
 
-1. Execution Context: the JavaScript `Object` or `Object`s containing references
-   to the variables and methods that are currently in scope. At the global
-   level, this is the _global execution context_; inside functions, it is that
-   function's local execution context plus the execution contexts available to
-   it via the scope chain.
-2. `this`: refers to the `Object` that describes the current execution context.
-   Inside a function, `this` refers to the _function execution context_. At the
-   global level, `this` refers to the _global execution context_. Properties of
-   the execution context `Object` can be accessed using dot notation:
-   `this.propName`.
+1. Execution Context: the space set aside in the JavaScript engine's memory
+   containing references to the variables and methods that are currently in
+   scope. At the global level, this is the _global execution context_; inside
+   a function, it is the _function execution context_ plus the execution
+   contexts available to it via the scope chain.
+2. `this`: refers to a special object that is part of the current execution
+   context. The value of `this` is determined based on how and where the
+   function is invoked. In future lessons, we'll explain how JavaScript
+   determines what `this` is when a function is invoked.
 3. `call`: This is a method _on a function_ that calls the function, just like
-   `()`. You provide a new execution context object as the first argument,
-   traditionally called `thisArg`, and the arguments you want to send to the
-   function after the `thisArg`. An invocation of `call` looks like this:
+   `()`. The first argument, traditionally called `thisArg`, is the object that
+   should be used as the value of `this` when the function is invoked. You then
+   list any other arguments you want to send to the function after the
+   `thisArg`. An invocation of `call` looks like this:
    `Calculator.sum.call(multilingualMessages, 1, 2)`.
 4. `apply`: This is a method _on a function_ that calls the function, just like
-   `()`. You provide a new execution context object as the first argument,
-   traditionally called `thisArg`, and the arguments you want to send to the
-   function ***as an `Array`*** after the `thisArg`. An invocation of `apply`
-   looks like this: `Calculator.sum.apply(multilingualMessages, [1, 2])`.
+   `()`. The first argument, traditionally called `thisArg`, is the object that
+   should be used as the value of `this` when the function is invoked. You then
+   pass additional arguments you want to send to the function as an `Array`
+   after the `thisArg`. An invocation of `apply` looks like this:
+   Calculator.sum.apply(multilingualMessages, [1, 2]).
 5. `bind`: This method returns _a copy_ of the function it's called on, but with
    the execution context "set" to the argument that's passed to `bind`. It looks
    like this: `sayHello.bind(greenFrog)("Hello") //=> "Mr. GreenFrog says *Hello* to you all."`.
