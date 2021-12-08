@@ -63,7 +63,8 @@ them now so you can say "Oh, this is important" when you see them later.
    Calculator.sum.apply(multilingualMessages, [1, 2]).
 5. `bind`: This method returns _a copy_ of the function it's called on, but with
    the execution context "set" to the argument that's passed to `bind`. It looks
-   like this: `sayHello.bind(greenFrog)("Hello") //=> "Mr. GreenFrog says *Hello* to you all."`.
+   like this:
+   `sayHello.bind(greenFrog)("Hello") //=> "Mr. GreenFrog says *Hello* to you all."`.
 
 Don't worry if this isn't making a lot of sense just yet — we will cover these
 concepts in depth soon. Before we do that, however, in this lab we'll create
