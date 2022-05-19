@@ -60,7 +60,7 @@ them now so you can say "Oh, this is important" when you see them later.
    should be used as the value of `this` when the function is invoked. You then
    pass additional arguments you want to send to the function as an `Array`
    after the `thisArg`. An invocation of `apply` looks like this:
-   Calculator.sum.apply(multilingualMessages, [1, 2]).
+   `Calculator.sum.apply(multilingualMessages, [1, 2])`.
 5. `bind`: This method returns _a copy_ of the function it's called on, but with
    the execution context "set" to the argument that's passed to `bind`. It looks
    like this:
